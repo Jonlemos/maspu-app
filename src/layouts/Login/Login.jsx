@@ -7,7 +7,7 @@ export default class Login extends React.Component {
 
     render() {
         return(
-            <h1 style={{color: this.props.color, margin: this.props.margin}}>Login</h1>
+            <h1 style={{color: this.props.color, margin: this.props.margin}}>Login</h1>            
         )
     }
     
