@@ -2,6 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    height: 94%;
     background: -webkit-linear-gradient(45deg, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 65%, rgba(209,209,209,1) 100%);
 
     /* background: -webkit-linear-gradient(45deg, rgba(227,227,227,1) 0%, rgba(201,158,162,1) 61%, rgba(201,158,162,1) 100%); */
@@ -10,6 +11,7 @@ html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 .d-flex{
@@ -21,4 +23,19 @@ html, body {
 }
 .margin-a{
     margin-right: 20%;
+    margin-top: 5px
+}
+.b-radius{
+    border-radius: 15px;
+}
+.float-button{
+    float: right;
+    margin-right: 20%;
+    margin-top: 10%;
+}
+.welcome{
+    text-align: center;
+}
+.normal-font {
+    font-size: 12px
 }
