@@ -2,7 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 94%;
+    height: 95%;
     background: -webkit-linear-gradient(45deg, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 65%, rgba(209,209,209,1) 100%);
 
     /* background: -webkit-linear-gradient(45deg, rgba(227,227,227,1) 0%, rgba(201,158,162,1) 61%, rgba(201,158,162,1) 100%); */
