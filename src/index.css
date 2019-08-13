@@ -27,6 +27,7 @@ html, body {
 }
 .b-radius{
     border-radius: 15px;
+    border: 2px solid #e20714;
 }
 .float-button{
     float: right;
@@ -35,6 +36,7 @@ html, body {
 }
 .welcome{
     text-align: center;
+    color: #fff;
 }
 .normal-font {
     font-size: 12px
