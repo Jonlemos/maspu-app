@@ -2,10 +2,16 @@ html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 95%;
+    height: 100%;
     background: -webkit-linear-gradient(45deg, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 65%, rgba(209,209,209,1) 100%);
 
     /* background: -webkit-linear-gradient(45deg, rgba(227,227,227,1) 0%, rgba(201,158,162,1) 61%, rgba(201,158,162,1) 100%); */
+}
+.App{
+    height: 100%;
+}
+#root{
+    height: 100%;
 }
 *{
     margin: 0;
@@ -40,4 +46,8 @@ html, body {
 }
 .normal-font {
     font-size: 12px
+}
+.teste {
+    margin: 3px;
+    height: 15px;
 }

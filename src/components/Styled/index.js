@@ -61,25 +61,77 @@ const AbsoluteD = styled.div`
   clip-path: polygon(63% -1%,100% 46%,200% -1%);
   margin-left: 50%;
 `;
-
-export { 
-    Container 
+const Layout = styled.div`
+  background-color: #444f00;
+  display:flex;
+  height: 100%;
+  width: 100%;
+`
+const Dashboard = styled.div`
+  background-color: blue;
+  height: 100%;
+  width: 15%;
+  font-size:20px;
+`
+const Maspu = styled.div`
+  background-color: #fff;
+  height: 10%;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  font-size: 30px;
+  color: #e20714;
+`
+const Views = styled.div`
+  background-color: red;
+  height: 100%;
+  width: 85%;
+`
+const Menu = styled.div`
+ background-color:yellow;
+`
+const Account = styled.div`
+ background-color:grey;
+ display:flex;
+ justify-content: space-between;
+ padding:4px 5px;
+`
+export {
+  Layout
+}
+export {
+  Menu
+}
+export {
+  Dashboard
+}
+export {
+  Views
+}
+export {
+  Maspu
 }
 export { 
-    Part1 
+  Container 
 }
 export { 
-    Part2 
+  Part1 
 }
 export { 
-    Box 
+  Part2 
 }
 export { 
-    BoxLogin 
+  Box 
 }
 export { 
-    Input 
+  BoxLogin 
 }
 export { 
-    AbsoluteD 
+  Input 
+}
+export { 
+  AbsoluteD 
+}
+export { 
+  Account 
 }
