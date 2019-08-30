@@ -70,7 +70,7 @@ const Layout = styled.div`
 const Dashboard = styled.div`
   background-color: blue;
   height: 100%;
-  width: 15%;
+  width: 18%;
   font-size:20px;
 `
 const Maspu = styled.div`

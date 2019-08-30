@@ -1,11 +1,52 @@
 import React from 'react';
 import { Container, Part1, Part2, Box, BoxLogin, Input, AbsoluteD } from '../../components/Styled';
 import {CheckBox, Button} from 'grommet';
+import axios from 'axios';
 
 export default class Login extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            email: '',
+            password: ''
+        };
+    }
+
+    handleEmailChange = event => {
+        this.setState({
+            email: event.target.value
+        });
+    }
+
+    handlePasswordChange = event => {
+        this.setState({
+            password: event.target.value
+        });
+    }
+
+    handleSubmit = () => {
+        axios.post('https://doge-graphql-api.herokuapp.com', {
+            query: `
+                mutation {
+                    auth(
+                        email: "${this.state.email}",
+                        password: "${this.state.password}"
+                    ) {
+                        token
+                    }
+                }
+            `,
+        }).then(res => {
+            console.log(res);
+            console.log(res.data.data.auth.token);
+            const token = res.data.data.auth.token || null;
+            if (token) {
+                localStorage.token = token;
+                window.location.replace('/dashboard');
+            } else {
+
+            }
+        }).catch(error => console.error(error));
     }
 
     render() {
@@ -19,14 +60,14 @@ export default class Login extends React.Component {
                     </BoxLogin>
                     <BoxLogin>
                     <form >
-                        <Input type="text" name="FirstName" placeholder="Username"/>
-                        <Input type="password" name="FirstName" placeholder="Password"/>
+                        <Input onChange={this.handleEmailChange} type="e-mail" name="FirstName" placeholder="E-mail"/>
+                        <Input onChange={this.handlePasswordChange} type="password" name="FirstName" placeholder="Password"/>
                         <div className="d-flex">
                         <CheckBox className="normal-font" label='Lembrar Senha' critical={true} toggle={true} />
                         <a className="margin-a normal-font" href="/">Esqueceu sua senha ?</a>
                         </div>
                         <div className="float-button">
-                        <Button className="b-radius" label='LOGIN' critical={true} type='submit'/>
+                        <Button onClick={this.handleSubmit} className="b-radius" label='LOGIN' critical={true}/>
                         </div>
                     </form>
                     
