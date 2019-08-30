@@ -47,9 +47,16 @@ html, body {
 .normal-font {
     font-size: 12px
 }
-.teste {
-    margin: 3px;
-    height: 15px;
+.margin-menu {
+    padding: 3px;
+}
+
+.margin-submenu {
+    padding-left: 20px;
+}
+
+.margin-submenu:hover {
+    background-color: #ea5542
 }
 
 

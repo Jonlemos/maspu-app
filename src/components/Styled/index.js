@@ -78,7 +78,7 @@ const Maspu = styled.div`
   height: 10%;
   width: 100%;
   text-align: center;
-  padding: 5px;
+  padding: 10px;
   font-size: 30px;
   color: #e20714;
 `
@@ -92,46 +92,10 @@ const Menu = styled.div`
 `
 const Account = styled.div`
  background-color:grey;
- display:flex;
  justify-content: space-between;
  padding:4px 5px;
 `
+
 export {
-  Layout
-}
-export {
-  Menu
-}
-export {
-  Dashboard
-}
-export {
-  Views
-}
-export {
-  Maspu
-}
-export { 
-  Container 
-}
-export { 
-  Part1 
-}
-export { 
-  Part2 
-}
-export { 
-  Box 
-}
-export { 
-  BoxLogin 
-}
-export { 
-  Input 
-}
-export { 
-  AbsoluteD 
-}
-export { 
-  Account 
+  Layout, Menu, Dashboard, Views, Maspu, Container, Part1, Part2, Box, BoxLogin, Input, AbsoluteD, Account
 }
