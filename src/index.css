@@ -48,15 +48,24 @@ html, body {
     font-size: 12px
 }
 .margin-menu {
-    padding: 3px;
+    padding: 3px 0 3px 12px;
 }
 
 .margin-submenu {
-    padding-left: 20px;
+    padding-left: 30px;
 }
 
 .margin-submenu:hover {
     background-color: #ea5542
+}
+.height-svg {
+    height: 15px;
+    position: relative;
+    left: 50%;
+}
+ul {
+    text-decoration: none;
+    list-style: none;
 }
 
 

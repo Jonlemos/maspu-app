@@ -13,16 +13,19 @@ export default class Login extends React.Component {
             <Layout>
                 <Dashboard>
                 <Maspu>Maspu-App</Maspu>
-                <Account className='margin-menu'>
+                <Account className=''>
                     <ul className=''> 
-                        <li className=''>Jonathan <CaretDown  color='purple'/></li>
+                        <li className='margin-menu'>Jonathan <CaretDown className="height-svg"  color='purple'/></li>
                             <ul>
                                 <li className="margin-submenu">Alterar perfil</li>
                                 <li className="margin-submenu">Logout</li>
                             </ul>
                     </ul>
                 </Account>
-                <Menu className="margin-menu">Menu</Menu>
+                <Menu className="margin-menu">Painel</Menu>
+                    <Account className='margin-menu'>Produtos</Account>
+                    <Account className='margin-menu'>Usuários</Account>
+                    <Account className='margin-menu'>Ordens</Account>
                 </Dashboard>
                 <Views>
 

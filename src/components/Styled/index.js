@@ -93,7 +93,6 @@ const Menu = styled.div`
 const Account = styled.div`
  background-color:grey;
  justify-content: space-between;
- padding:4px 5px;
 `
 
 export {
