@@ -1,11 +1,24 @@
 import React from 'react';
 import { Layout, Dashboard, Views, Maspu, Menu, Account,} from '../../components/Styled';
 import {CaretDown,} from 'grommet-icons';
+import Dropdown from '../../components/Dropdown/Dropdown';
 
 export default class Login extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            dropdown: {
+                status: false
+            }
+        }
+    }
+
+    handleCaretClick = () => {
+        this.setState({
+            dropdown: {
+                status: !this.state.dropdown.status
+            }
+        });
     }
 
     render() {
@@ -15,10 +28,13 @@ export default class Login extends React.Component {
                 <Maspu>Maspu-App</Maspu>
                 <Account className=''>
                     <ul className=''> 
-                        <li className='margin-menu'>Jonathan <CaretDown className="height-svg"  color='purple'/></li>
+                        <li className='margin-menu'>Jonathan <CaretDown onClick={this.handleCaretClick} className="height-svg"  color='purple'/></li>
                             <ul>
-                                <li className="margin-submenu">Alterar perfil</li>
-                                <li className="margin-submenu">Logout</li>
+                                <Dropdown status={this.state.dropdown.status ? 'open' : ''}>
+                                    <li className="margin-submenu">Alterar perfil</li>
+                                    <li className="margin-submenu">Logout</li>
+                                </Dropdown>
+                                
                             </ul>
                     </ul>
                 </Account>

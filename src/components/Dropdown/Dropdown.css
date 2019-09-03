@@ -1,0 +1,9 @@
+.dropdown {
+    height: 0px;
+    background-color: aqua;
+    transition: height 0.25s ease;
+}
+
+.dropdown.open {
+    height: 100%;
+}
