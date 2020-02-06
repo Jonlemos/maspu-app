@@ -62,7 +62,6 @@ const AbsoluteD = styled.div`
   margin-left: 50%;
 `;
 const Layout = styled.div`
-  background-color: #444f00;
   display:flex;
   flex-direction: column;
   
@@ -83,7 +82,6 @@ const Maspu = styled.div`
   color: #e20714;
 `
 const Views = styled.div`
-  background-color: aliceblue;
   height: 91vh;
 `
 const Menu = styled.div`
