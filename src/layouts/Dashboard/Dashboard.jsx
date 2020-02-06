@@ -1,9 +1,11 @@
-import React, {Component} from 'react';
-import {Route, Switch} from 'react-router'
-import { Layout, Dashboard, Views, Maspu, Menu, Account,} from '../../components/Styled';
-import {CaretDown,} from 'grommet-icons';
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router'
+import { Layout, Dashboard, Views, Maspu, Menu, Account, } from '../../components/Styled';
+import { CaretDown, } from 'grommet-icons';
 import Dropdown from '../../components/Dropdown/Dropdown';
 import Categories from '../../views/categories/Categories'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Navbar, Nav, Button, NavDropdown, FormControl, Form, Jumbotron } from 'react-bootstrap';
 
 export default class Login extends Component {
     constructor(props) {
@@ -14,9 +16,9 @@ export default class Login extends Component {
             }
         }
         this.views = [{
-          name: 'Categories',
-          path: '/dashboard/categories',
-          component: Categories  
+            name: 'Categories',
+            path: '/dashboard/categories',
+            component: Categories
         }]
     }
 
@@ -29,33 +31,53 @@ export default class Login extends Component {
     }
 
     render() {
-        return(
+        return (
+
             <Layout>
-                <Dashboard>
-                <Maspu>Maspu-App</Maspu>
-                <Account className=''>
-                    <ul className=''> 
-                        <li className='margin-menu'>Jonathan <CaretDown onClick={this.handleCaretClick} className="height-svg"  color='purple'/></li>
+                <Navbar bg="light" expand="lg">
+                    <Navbar.Brand href="#home">Maspu-App</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="mr-auto">
+                            <Nav.Link onClick={() => window.location.pathname = "/dashboard"} >Home</Nav.Link>
+                            <Nav.Link href="#link">Painel</Nav.Link>
+                            <Nav.Link onClick={() => window.location.pathname = "/dashboard/categories"}> Produtos</Nav.Link>
+                            <Nav.Link href="#link">Usuarios</Nav.Link>
+                            <Nav.Link href="#link">Ordens</Nav.Link>
+                            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                            </NavDropdown>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>
+                
+                <Views>
+                    {this.views.map((view, i) => <Route key={i} {...view} />)}
+                </Views>
+                    {/* <Account className=''>
+                        <ul className=''>
+                            <li className='margin-menu'>Jonathan <CaretDown onClick={this.handleCaretClick} className="height-svg" color='purple' /></li>
                             <ul>
                                 <Dropdown status={this.state.dropdown.status ? 'open' : ''}>
                                     <li className="margin-submenu">Alterar perfil</li>
                                     <li className="margin-submenu">Logout</li>
                                 </Dropdown>
-                                
+
                             </ul>
-                    </ul>
-                </Account>
-                <Menu className="margin-menu">Painel</Menu>
-                    <Account onClick={()=>window.location.pathname="/dashboard/categories"} className='margin-menu'>Produtos</Account>
-                    <Account className='margin-menu'>Usuários</Account>
-                    <Account className='margin-menu'>Ordens</Account>
-                </Dashboard>
-                <Views>
-                    {this.views.map((view, i) => <Route key={i} { ...view }/>)}
-                </Views>
+                        </ul>
+                    </Account> */}
+                    {/* <Menu className="margin-menu">Painel</Menu> */}
+                    {/* <Account onClick={() => window.location.pathname = "/dashboard/categories"} className='margin-menu'>Produtos</Account> */}
+                    {/* <Account className='margin-menu'>Usuários</Account>
+                    <Account className='margin-menu'>Ordens</Account> */}
+                
             </Layout>
-                   
+
         )
     }
-    
+
 }

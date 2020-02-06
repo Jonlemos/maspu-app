@@ -64,8 +64,8 @@ const AbsoluteD = styled.div`
 const Layout = styled.div`
   background-color: #444f00;
   display:flex;
-  height: 100%;
-  width: 100%;
+  flex-direction: column;
+  
 `
 const Dashboard = styled.div`
   background-color: blue;
@@ -83,9 +83,8 @@ const Maspu = styled.div`
   color: #e20714;
 `
 const Views = styled.div`
-  background-color: red;
-  height: 100%;
-  width: 85%;
+  background-color: aliceblue;
+  height: 91vh;
 `
 const Menu = styled.div`
  background-color:yellow;
