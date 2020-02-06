@@ -5,7 +5,7 @@ import './Categories.css';
 export default class Categories extends React.Component {
     render() {
         return (
-            <Container className="container">
+            <Container className="container-product">
                 <Accordion defaultActiveKey="0">
                     <Accordion.Toggle as={Button} variant="link" eventKey="0">
                         <h1>Bebidas</h1>
