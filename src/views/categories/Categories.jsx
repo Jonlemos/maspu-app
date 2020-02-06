@@ -77,7 +77,7 @@ export default class Categories extends React.Component {
                 </Accordion>
                 <Accordion defaultActiveKey="1">
                     <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                        <h1>Bomboniere</h1>
+                        <h1>Bombonie</h1>
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="1">
                         <section className="section-card">
