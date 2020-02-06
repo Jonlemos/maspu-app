@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router'
-import { Layout, Dashboard, Views, Maspu, Menu, Account, } from '../../components/Styled';
-import { CaretDown, } from 'grommet-icons';
-import Dropdown from '../../components/Dropdown/Dropdown';
-import Categories from '../../views/categories/Categories'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar, Nav, Button, NavDropdown, FormControl, Form, Jumbotron } from 'react-bootstrap';
+import { Route } from 'react-router'
+import { Layout, Views } from '../../components/Styled';
+import { Categories, Extracts } from '../../views';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
 export default class Login extends Component {
     constructor(props) {
@@ -19,6 +16,11 @@ export default class Login extends Component {
             name: 'Categories',
             path: '/dashboard/categories',
             component: Categories
+        },
+        {
+            name: 'Extracts',
+            path: '/dashboard/extracts',
+            component: Extracts
         }]
     }
 
