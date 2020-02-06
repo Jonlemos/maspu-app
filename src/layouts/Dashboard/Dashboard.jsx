@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {Route, Switch} from 'react-router'
 import { Layout, Dashboard, Views, Maspu, Menu, Account,} from '../../components/Styled';
 import {CaretDown,} from 'grommet-icons';
 import Dropdown from '../../components/Dropdown/Dropdown';
+import Categories from '../../views/categories/Categories'
 
-export default class Login extends React.Component {
+export default class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -11,6 +13,11 @@ export default class Login extends React.Component {
                 status: false
             }
         }
+        this.views = [{
+          name: 'Categories',
+          path: '/dashboard/categories',
+          component: Categories  
+        }]
     }
 
     handleCaretClick = () => {
@@ -39,12 +46,12 @@ export default class Login extends React.Component {
                     </ul>
                 </Account>
                 <Menu className="margin-menu">Painel</Menu>
-                    <Account className='margin-menu'>Produtos</Account>
+                    <Account onClick={()=>window.location.pathname="/dashboard/categories"} className='margin-menu'>Produtos</Account>
                     <Account className='margin-menu'>Usuários</Account>
                     <Account className='margin-menu'>Ordens</Account>
                 </Dashboard>
                 <Views>
-
+                    {this.views.map((view, i) => <Route key={i} { ...view }/>)}
                 </Views>
             </Layout>
                    

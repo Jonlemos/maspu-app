@@ -1,5 +1,7 @@
 import React from 'react'
 
-export default class {
-    
+export default class Categories extends React.Component {
+    render() {
+        return <h1>oi</h1>
+    }
 }
