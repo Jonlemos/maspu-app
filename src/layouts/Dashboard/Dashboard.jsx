@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { Layout, Views } from '../../components/Styled';
-import { Categories, Extracts } from '../../views';
+import { Categories, Extracts, Extract } from '../../views';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
 export default class Login extends Component {
@@ -17,11 +17,19 @@ export default class Login extends Component {
                 name: 'Categories',
                 path: '/dashboard/categories',
                 component: Categories,
+                exact: false,
             },
             {
                 name: 'Extracts',
                 path: '/dashboard/extracts',
                 component: Extracts,
+                exact: true,
+            },
+            {
+                name: 'Extract',
+                path: '/dashboard/extracts/:id',
+                component: Extract,
+                exact: false,
             },
         ];
     }
