@@ -1,0 +1,14 @@
+.container {
+    height        : 100vh;
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+}
+
+.section-card {
+    display: flex;
+}
+
+.Card-See {
+    margin: 0 15px;
+}
