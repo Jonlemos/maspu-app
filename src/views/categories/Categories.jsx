@@ -1,74 +1,25 @@
 import React from 'react';
 import { Container, Card, Button, Accordion } from 'react-bootstrap';
 import './Categories.css';
+import axios from 'axios';
 
 export default class Categories extends React.Component {
     constructor(props) {
         super(props);
-        this.categories = [
-            {
-                productName: 'Coca-Cola',
-                description: '500ml',
-                price: 5,
-                category: 1,
-                nameCategory: 'Bebidas',
-                imagem:
-                    'https://static.carrefour.com.br/medias/sys_master/images/images/hd7/hd6/h00/h00/12175683682334.jpg',
-            },
-            {
-                productName: 'Heineken',
-                description: '450ml',
-                price: 5,
-                category: 1,
-                nameCategory: 'Bebidas',
-                imagem:
-                    'https://static.carrefour.com.br/medias/sys_master/images/images/hd7/hd6/h00/h00/12175683682334.jpg',
-            },
-            {
-                productName: 'Chá',
-                description: '330ml',
-                price: 5,
-                category: 1,
-                nameCategory: 'Bebidas',
-                imagem:
-                    'https://static.carrefour.com.br/medias/sys_master/images/images/hd7/hd6/h00/h00/12175683682334.jpg',
-            },
-
-            {
-                productName: 'Bombom',
-                description: '1un',
-                price: 5,
-                category: 2,
-                nameCategory: 'Doces',
-                imagem:
-                    'https://basmar.com.br/image/cache/data/PRODUTOS%20NOVOS/Sonho-de-Valsa-13-800x800.jpg',
-            },
-            {
-                productName: 'Fandangos',
-                description: '450ml',
-                price: 5,
-                category: 2,
-                nameCategory: 'Doces',
-                imagem:
-                    'https://basmar.com.br/image/cache/data/PRODUTOS%20NOVOS/Sonho-de-Valsa-13-800x800.jpg',
-            },
-            {
-                productName: 'Paçoca',
-                description: '330ml',
-                price: 5,
-                category: 2,
-                nameCategory: 'Doces',
-                imagem:
-                    'https://basmar.com.br/image/cache/data/PRODUTOS%20NOVOS/Sonho-de-Valsa-13-800x800.jpg',
-            },
-        ];
+        this.state = {
+            products: [],
+        };
     }
 
-    products = () => {
-        axios.get('/produts').then(response => {
-            console.log(response);
+    componentDidMount() {
+        axios.get('https://maspu-app.herokuapp.com/products').then(response => {
+            if (response) {
+                const products = response.data;
+                console.log(products);
+                this.setState({ products });
+            }
         });
-    };
+    }
 
     render() {
         return (
@@ -79,7 +30,7 @@ export default class Categories extends React.Component {
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="0">
                         <section className="section-card">
-                            {this.categories.map((categories, i) => (
+                            {this.state.products.map((categories, i) => (
                                 <Card
                                     key={i}
                                     className="Card-See"
@@ -87,11 +38,11 @@ export default class Categories extends React.Component {
                                 >
                                     <Card.Img
                                         variant="top"
-                                        src={categories.imagem}
+                                        src={categories.image}
                                     />
                                     <Card.Body>
                                         <Card.Title>
-                                            {this.props.productName}
+                                            {categories.title}
                                         </Card.Title>
                                         <Card.Text>
                                             {categories.price}
