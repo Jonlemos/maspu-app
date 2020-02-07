@@ -51,15 +51,23 @@ export default class Extract extends React.Component {
         return (
             <Container className="bd-masthead">
                 <Row
+                    className="rounded shadow-sm primary"
                     style={{
                         margin: '0px 2px 0px 2px',
-                        backgroundColor: 'purple',
                     }}
                 >
                     <Image
-                        style={{ width: '60px', height: '60px' }}
+                        className="rounded border-2 ml-2 my-2 mb-2 "
+                        style={{
+                            width: '60px',
+                            height: '60px',
+                        }}
                         src={initials}
                     />
+                    <div className="lh-100 mt-3 ml-2">
+                        <h5 className="lh-100 text-white">Janeiro</h5>
+                        <small className="text-white">Extrato Detalhado</small>
+                    </div>
                 </Row>
                 <Table striped bordered hover variant="light">
                     <thead>
@@ -85,13 +93,15 @@ export default class Extract extends React.Component {
                             );
                         })}
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <b class="float-right">Total:</b>
+                            <td className="primary"></td>
+                            <td className="primary"></td>
+                            <td className="primary">
+                                <b class="float-right text-white">Total:</b>
                             </td>
-                            <td>
-                                R$ <Total values={this.spending}></Total>
+                            <td className="text-white primary">
+                                <b>
+                                    R$ <Total values={this.spending}></Total>
+                                </b>
                                 {/* { this.total } */}
                             </td>
                         </tr>
