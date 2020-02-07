@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { Layout, Views } from '../../components/Styled';
 import { Categories, Extracts, Extract } from '../../views';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, Image } from 'react-bootstrap';
+import logo from './../../assets/images/logo-sf.png';
 
 export default class Login extends Component {
     constructor(props) {
@@ -46,7 +47,9 @@ export default class Login extends Component {
         return (
             <Layout>
                 <Navbar bg="dark" variant="dark" expand="lg">
-                    <Navbar.Brand href="#home">Maspu-App</Navbar.Brand>
+                    <Navbar.Brand href="#home">
+                        <Image style={{ width: 50, height: 50 }} src={logo} />
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
