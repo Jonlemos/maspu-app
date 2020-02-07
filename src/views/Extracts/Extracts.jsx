@@ -2,7 +2,7 @@ import React from 'react';
 // import { Jumbotron, Button } from 'react-bootstrap';
 import { Container, Row, Card, Button } from 'react-bootstrap';
 import './Extracts.css';
-import Extract from './Extract';
+// import Extract from './Extract';
 
 export default class Extracts extends React.Component {
     constructor(props) {
