@@ -6,15 +6,21 @@
 }
 
 .section-card {
-    display  : flex;
-    max-width: 100vw;
-    flex-wrap: wrap;
+    display        : flex;
+    justify-content: center;
+    max-width      : 100vw;
+    flex-wrap      : wrap;
 }
 
 .Card-See {
     margin: 0 15px 15px 15px;
 }
-.button-aling{
-    align-items: center;
-    justify-content:space-around;
+
+.button-aling {
+    align-items    : center;
+    justify-content: space-around;
+}
+
+.align-toggle {
+    margin-left: 80px;
 }
