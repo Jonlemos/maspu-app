@@ -1,14 +1,21 @@
-import React from 'react';
-import { Container, Card, Button, Accordion } from 'react-bootstrap';
+import React, { Component } from 'react';
+import { Container, Card, Button, Accordion, Row } from 'react-bootstrap';
 import './Categories.css';
 import axios from 'axios';
 
-export default class Categories extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            products: [],
-        };
+export default class Categories extends Component {
+
+    state = {
+        products: [],
+        counter: 0
+    };
+
+    increment(a) {
+        this.setState({ counter: a === a ? this.state.counter + 1 : this.state.counter })
+    }
+
+    decrement(a) {
+        this.setState({ counter: a === a ? this.state.counter - 1 : this.state.counter })
     }
 
     componentDidMount() {
@@ -45,11 +52,19 @@ export default class Categories extends React.Component {
                                             {categories.title}
                                         </Card.Title>
                                         <Card.Text>
-                                            {categories.price}
+                                            R$ {categories.price}
                                         </Card.Text>
-                                        <Button variant="primary">
-                                            Adicionar
-                                        </Button>
+                                        <Row className="button-aling">
+                                            <Button key={i} onClick={() => this.decrement(i)} variant="primary">
+                                                -
+                                            </Button>
+                                            <div> {this.state.counter} </div>
+                                            <Button key={i} onClick={() => this.increment(i)} variant="primary">
+                                                +
+                                            </Button>
+
+                                        </Row>
+
                                     </Card.Body>
                                 </Card>
                             ))}

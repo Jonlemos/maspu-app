@@ -14,3 +14,7 @@
 .Card-See {
     margin: 0 15px 15px 15px;
 }
+.button-aling{
+    align-items: center;
+    justify-content:space-around;
+}
