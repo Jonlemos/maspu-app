@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Row } from 'react-bootstrap';
 import './Categories.css';
-import { ThemeConsumer } from 'styled-components';
+// import { ThemeConsumer } from 'styled-components';
 
 export default class Buttons extends Component {
     constructor(props) {

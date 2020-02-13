@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Card, Button, Accordion, Row } from 'react-bootstrap';
+import { Container, Card, Button, Accordion } from 'react-bootstrap';
 import Buttons from './Buttons';
 import FloatingBar from './FloatingBar';
 import './Categories.css';

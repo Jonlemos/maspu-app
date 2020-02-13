@@ -4,6 +4,8 @@ import { Layout, Views } from '../../components/Styled';
 import { Categories, Extracts, Extract } from '../../views';
 import { Navbar, Nav, NavDropdown, Image } from 'react-bootstrap';
 import logo from './../../assets/images/logo-sf.png';
+import axios from 'axios';
+import Total from './../../services/Total/Total';
 
 export default class Login extends Component {
     constructor(props) {
@@ -12,7 +14,9 @@ export default class Login extends Component {
             dropdown: {
                 status: false,
             },
+            values: [],
         };
+
         this.views = [
             {
                 name: 'Categories',
@@ -35,12 +39,33 @@ export default class Login extends Component {
         ];
     }
 
+    handleUserData = () => {
+        axios
+            .get('https://maspu-app.herokuapp.com/getUserData', {
+                headers: {
+                    Authorization: localStorage.token,
+                },
+            })
+            .then(res => {
+                console.log(res.data.sale.items);
+                this.setState({
+                    ...this.state,
+                    values: res.data.sale.items,
+                });
+            })
+            .catch(error => console.error(error));
+    };
+
     handleCaretClick = () => {
         this.setState({
             dropdown: {
                 status: !this.state.dropdown.status,
             },
         });
+    };
+
+    componentDidMount = () => {
+        this.handleUserData();
     };
 
     render() {
@@ -99,9 +124,16 @@ export default class Login extends Component {
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
+                    <p className="float-right text-white mt-3">
+                        <Total
+                            values={this.state.values}
+                            position={'quantity'}
+                        ></Total>
+                    </p>
                 </Navbar>
 
                 <Views>
+                    {/* {<Total values={this.handleUserData.call()}></Total>} */}
                     {this.views.map((view, i) => (
                         <Route key={i} {...view} />
                     ))}

@@ -57,7 +57,7 @@ export default class Extract extends React.Component {
                     }}
                 >
                     <Image
-                        className="rounded border-2 ml-2 my-2 mb-2 "
+                        className="rounded border-2 ml-2 mt-2 mb-2 "
                         style={{
                             width: '60px',
                             height: '60px',
@@ -96,11 +96,15 @@ export default class Extract extends React.Component {
                             <td className="primary"></td>
                             <td className="primary"></td>
                             <td className="primary">
-                                <b class="float-right text-white">Total:</b>
+                                <b className="float-right text-white">Total:</b>
                             </td>
                             <td className="text-white primary">
                                 <b>
-                                    R$ <Total values={this.spending}></Total>
+                                    R${' '}
+                                    <Total
+                                        values={this.spending}
+                                        position={'value'}
+                                    ></Total>
                                 </b>
                                 {/* { this.total } */}
                             </td>

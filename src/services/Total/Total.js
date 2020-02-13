@@ -1,6 +1,6 @@
 export default props => {
     const total = props.values.reduce(
-        (prevValue, currentValue) => prevValue + currentValue.value,
+        (prevValue, currentValue) => prevValue + currentValue[props.position],
         0
     );
 
