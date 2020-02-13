@@ -4,7 +4,9 @@ import { Toast } from 'react-bootstrap';
 export default class FloatingBar extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            totalValue: 0,
+        };
     }
 
     render() {
