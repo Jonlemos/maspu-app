@@ -25,21 +25,11 @@ export default class Login extends React.Component {
     }
 
     handleSubmit = () => {
-        axios.post('https://doge-graphql-api.herokuapp.com', {
-            query: `
-                mutation {
-                    auth(
-                        email: "${this.state.email}",
-                        password: "${this.state.password}"
-                    ) {
-                        token
-                    }
-                }
-            `,
+        axios.post('https://maspu-app.herokuapp.com/auth', {
+            email: this.state.email,
+            password: this.state.password
         }).then(res => {
-            console.log(res);
-            console.log(res.data.data.auth.token);
-            const token = res.data.data.auth.token || null;
+            const token = res.data.token || null;
             if (token) {
                 localStorage.token = token;
                 window.location.replace('/dashboard');

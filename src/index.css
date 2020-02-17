@@ -1,51 +1,58 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     height: 100%;
-    background: -webkit-linear-gradient(45deg, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 65%, rgba(209,209,209,1) 100%);
+    background: -webkit-linear-gradient(
+        45deg,
+        rgba(226, 226, 226, 1) 0%,
+        rgba(209, 209, 209, 1) 65%,
+        rgba(209, 209, 209, 1) 100%
+    );
 
     /* background: -webkit-linear-gradient(45deg, rgba(227,227,227,1) 0%, rgba(201,158,162,1) 61%, rgba(201,158,162,1) 100%); */
 }
-.App{
+.App {
+    height: 100%;
+    background-color: rgba(255, 255, 255, 1);
+}
+#root {
     height: 100%;
 }
-#root{
-    height: 100%;
-}
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 
-.d-flex{
-    display:flex;
+.d-flex {
+    display: flex;
     justify-content: space-between;
 }
 .d-block {
     display: block;
 }
-.margin-a{
+.margin-a {
     margin-right: 20%;
-    margin-top: 5px
+    margin-top: 5px;
 }
-.b-radius{
+.b-radius {
     border-radius: 15px;
     border: 2px solid #e20714;
 }
-.float-button{
+.float-button {
     float: right;
     margin-right: 20%;
     margin-top: 10%;
 }
-.welcome{
+.welcome {
     text-align: center;
     color: #fff;
 }
 .normal-font {
-    font-size: 12px
+    font-size: 12px;
 }
 .margin-menu {
     padding: 3px 0 3px 12px;
@@ -57,7 +64,7 @@ html, body {
 }
 
 .margin-submenu:hover {
-    background-color: #ea5542
+    background-color: #ea5542;
 }
 .height-svg {
     height: 15px;
@@ -69,12 +76,11 @@ ul {
     list-style: none;
 }
 
-
 @media only screen and (max-width: 426px) {
     .d-flex {
-      display: block;
+        display: block;
     }
-    .float-button{
+    .float-button {
         float: none;
     }
-  }
+}
